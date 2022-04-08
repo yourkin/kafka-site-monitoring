@@ -1,0 +1,31 @@
+version: "3.8"
+services:
+
+  website-checker:
+    build:
+      context: srv/website-checker
+      dockerfile: Dockerfile
+    command: uvicorn app.main:application --reload --workers 1 --host 0.0.0.0 --port 8000
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=${ENVIRONMENT}
+      - DATABASE_URL=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${PG_HOST}:5432/${POSTGRES_DB}
+    depends_on:
+      - backend-db
+    volumes:
+      - ./srv/website-checker/src:/opt/app/src
+
+  backend-db:
+    build:
+      context: srv/db
+    volumes:
+        - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+
+volumes:
+  postgres_data:
