@@ -5,7 +5,7 @@ from ..app.main import create_application
 
 
 @pytest.fixture(scope="module")
-def test_app_without_db():
+def test_app():
     # set up
     app = create_application()
     with TestClient(app) as test_client:

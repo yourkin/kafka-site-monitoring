@@ -2,7 +2,7 @@ import logging
 
 from fastapi import FastAPI
 
-from .routers import heartbeat
+from .routers import heartbeat, checker
 
 log = logging.getLogger("uvicorn")
 
@@ -10,10 +10,11 @@ log = logging.getLogger("uvicorn")
 def create_application() -> FastAPI:
     fastapi_app = FastAPI(
         title="Website Checker API",
-        description="API monitor websites",
+        description="API for monitoring websites",
         version="0.1.0"
     )
     fastapi_app.include_router(heartbeat.router)
+    fastapi_app.include_router(checker.router)
     return fastapi_app
 
 
