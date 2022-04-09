@@ -9,8 +9,8 @@ log = logging.getLogger("uvicorn")
 
 def create_application() -> FastAPI:
     fastapi_app = FastAPI(
-        title="Website Checker API",
-        description="API monitor websites",
+        title="Database Writer API",
+        description="API to write to DB",
         version="0.1.0"
     )
     fastapi_app.include_router(heartbeat.router)
