@@ -3,12 +3,12 @@ import datetime
 from pydantic import BaseModel, HttpUrl
 
 
-class Input(BaseModel):
+class WebsiteParams(BaseModel):
     url: HttpUrl
     pattern: str | None
 
 
-class Output(BaseModel):
+class WebsiteStatus(BaseModel):
     response_time: datetime.timedelta
     status_code: int
     is_pattern_found: bool | None
