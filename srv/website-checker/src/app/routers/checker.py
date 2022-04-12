@@ -14,6 +14,5 @@ async def website_checker(input: Input):
     page.
     """
     checker = Checker(url=input.url, pattern=input.pattern)
-    checker.get_url()
     output = Output(status_code=checker.status_code, response_time=checker.response_time, is_pattern_found=None)
     return output
