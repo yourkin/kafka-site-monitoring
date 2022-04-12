@@ -1,16 +1,16 @@
-import json
+import datetime
+
+from src.app.checker import Checker
 
 
-def test_checker(test_app):
-    # Given
-    # test_app
-
-    # When
-    response = test_app.post("/website-checker", json={"url": "https://google.com", "pattern": "sometext"})
-
-    # Then
-    assert response.status_code == 200
-    json_resp = response.json()
-    assert type(json_resp["response_time"]) is int
-    assert type(json_resp["status_code"]) is int
-    assert type(json_resp["is_pattern_found"]) is int or type(None)
+def test_checker():
+    url = "https://google.com/"
+    pattern = "sometext"
+    checker = Checker(url=url, pattern=pattern)
+    checker.get_url()
+    assert checker.url == url
+    assert checker.pattern == pattern
+    assert type(checker.status_code) is int
+    assert type(checker.response_time) is datetime.timedelta
+    assert type(checker.page_contents) is str
+    # assert type(checker.is_pattern_found) is bool
