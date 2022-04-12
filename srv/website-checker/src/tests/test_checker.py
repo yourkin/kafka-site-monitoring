@@ -1,10 +1,16 @@
+import json
+
+
 def test_checker(test_app):
     # Given
     # test_app
 
     # When
-    response = test_app.post("/website-checker")
+    response = test_app.post("/website-checker", json={"url": "https://google.com", "pattern": "sometext"})
 
     # Then
     assert response.status_code == 200
-    assert response.json() == {"heartbeat": "OK"}
+    json_resp = response.json()
+    assert type(json_resp["response_time"]) is int
+    assert type(json_resp["status_code"]) is int
+    assert type(json_resp["is_pattern_found"]) is int or type(None)

@@ -9,4 +9,4 @@ class Input(BaseModel):
 class Output(BaseModel):
     response_time: int
     status_code: int
-    is_pattern_found: bool
+    is_pattern_found: bool | None

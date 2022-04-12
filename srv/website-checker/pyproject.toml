@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "aws-simple-api"
+name = "simple-website-monitoring"
 version = "0.1.0"
-description = "AWS Simple API"
+description = "Uncomplicated Website Monitoring"
 authors = ["Andrew Yourkin <andrew@yourkin.io>"]
 
 [tool.poetry.dependencies]
