@@ -6,7 +6,7 @@ from ..models import Input, Output
 router = APIRouter()
 
 
-@router.post("/website-checker", response_model=Output)
+@router.get("/website-checker", response_model=Output)
 async def website_checker(input: Input):
     """
     The website checker should perform the checks periodically and collect the HTTP response time, status code returned,
@@ -14,5 +14,4 @@ async def website_checker(input: Input):
     page.
     """
     checker = Checker(url=input.url, pattern=input.pattern)
-    output = Output(status_code=checker.status_code, response_time=checker.response_time, is_pattern_found=None)
-    return output
+    return Output.from_orm(checker)
