@@ -2,7 +2,7 @@ import logging
 
 from fastapi import FastAPI
 
-from .routers import heartbeat
+from .routers import heartbeat, consumer
 
 log = logging.getLogger("uvicorn")
 
@@ -14,6 +14,7 @@ def create_application() -> FastAPI:
         version="0.1.0"
     )
     fastapi_app.include_router(heartbeat.router)
+    fastapi_app.include_router(consumer.router)
     return fastapi_app
 
 
