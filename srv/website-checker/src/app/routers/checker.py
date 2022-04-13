@@ -20,5 +20,5 @@ async def website_checker(params: WebsiteParams):
 
 @router.post("/send-website-data")
 async def send_website_data(website_status: WebsiteStatus):
-    SendData.send_data("users")
-    return website_status
+    SendData.send_data("users", website_status.json())
+    return None
