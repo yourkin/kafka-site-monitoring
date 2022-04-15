@@ -12,7 +12,7 @@ ENV PYTHONUNBUFFERED=1 \
 ENV PATH="$POETRY_HOME/bin:$PATH"
 
 FROM python-base as builder-base
-RUN apt-get update && apt-get -y install --no-install-recommends curl netcat build-essential && apt-get clean
+RUN apt-get update && apt-get -y install --no-install-recommends curl netcat build-essential libpq5 && apt-get clean
 
 # Install Poetry
 RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python -
