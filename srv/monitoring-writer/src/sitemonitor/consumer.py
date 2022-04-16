@@ -12,11 +12,11 @@ consumer = KafkaConsumer(
 )
 
 
-def read_stream():
+def read_stream() -> None:
     """
     Reads Kafka stream.
     """
     for message in consumer:
         data = json.loads(message.value)
         with Writer() as writer:
-            writer.save_data(data)
+            writer.save_entry(data)
