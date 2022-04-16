@@ -2,7 +2,7 @@ import json
 
 from kafka import KafkaConsumer
 
-import db
+from sitemonitor.db import Writer
 
 consumer = KafkaConsumer(
     "users",
@@ -18,4 +18,5 @@ def read_stream():
     """
     for message in consumer:
         data = json.loads(message.value)
-        db.insert_row(data)
+        writer = Writer()
+        writer.insert_row(data)

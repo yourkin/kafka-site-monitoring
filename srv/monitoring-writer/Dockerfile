@@ -21,12 +21,12 @@ RUN poetry config virtualenvs.create false
 # copy project requirement files here to ensure they will be cached.
 WORKDIR $PYSETUP_PATH
 COPY poetry.lock pyproject.toml ./
-RUN bash -c "poetry install --no-root"
+RUN bash -c "poetry install "
 
 # Add App
 RUN mkdir -p /opt/app/src
 COPY src/ /opt/app/src
-WORKDIR /opt/app/src
+WORKDIR /opt/app/src/
 
 # Make entrypoint.sh runnable
 COPY entrypoint.sh /opt/app/

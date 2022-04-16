@@ -1,6 +1,6 @@
 from watchfiles import run_process
 
-from main import run
+from sitemonitor.main import run
 
 
 if __name__ == "__main__":
