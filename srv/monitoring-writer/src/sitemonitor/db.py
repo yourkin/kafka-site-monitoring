@@ -16,14 +16,20 @@ class Writer:
             datetime_checked varchar(32)
         )
         """
-        with self.conn.cursor() as cur:
-            cur.execute(query)
+        try:
+            with self.conn.cursor() as cur:
+                cur.execute(query)
+                self.conn.commit()
+        except Exception as e: # broad exception because we need to catch all errors, except keyboard interrupt.
+            print(f'Table creation for "{table}" failed with error: {e}.')
+        else:
+            print(f"Table {table} created.")
 
 
     def __init__(self, database_url=DATABASE_URL):
         self.conn = psycopg.connect(database_url)
 
-    def insert_row(self, data: dict, table: str = MONITORING_TABLE) -> None:
+    def save_data(self, data: dict, table: str = MONITORING_TABLE) -> None:
         query = f"""INSERT INTO {table} ({', '.join(data.keys())}) 
                     VALUES ({', '.join(len(data.keys()) * ['%s'])});"""
         with self.conn.cursor() as cur:
@@ -35,8 +41,7 @@ class Writer:
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.conn.close()
 
-        # with Writer() as conn:
-        #     with conn.cursor() as cur:
-        #         cur.execute(
 
-Writer().create_table()
+with Writer() as writer:
+    writer.create_table()
+

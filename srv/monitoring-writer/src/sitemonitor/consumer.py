@@ -18,5 +18,5 @@ def read_stream():
     """
     for message in consumer:
         data = json.loads(message.value)
-        writer = Writer()
-        writer.insert_row(data)
+        with Writer() as writer:
+            writer.save_data(data)
