@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 
-from src.sitechecker.checker import Checker
-from src.sitechecker.sender import SendData
+from sitechecker.checker import Checker
+from sitechecker.sender import SendData
 
 from ..models import WebsiteParams, WebsiteStatus
 

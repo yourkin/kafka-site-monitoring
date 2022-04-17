@@ -2,14 +2,15 @@ version: "3.8"
 services:
 
   website-checker:
+    hostname: website-checker
     build:
       context: srv/website-checker
       dockerfile: Dockerfile
-    command: uvicorn app.main:application --reload --workers 1 --host 0.0.0.0 --port 8000
+    command: uvicorn checkerapi.main:application --reload --workers 1 --host 0.0.0.0 --port 8000
     ports:
       - "8000:8000"
-    volumes:
-      - ./srv/website-checker/src:/opt/app/src
+#    volumes:
+#      - ./srv/website-checker/src:/opt/app/src/
 
   monitoring-writer:
     build:
@@ -23,7 +24,7 @@ services:
     depends_on:
       - backend-db
     volumes:
-      - ./srv/monitoring-writer/src:/opt/app/src
+      - ./srv/monitoring-writer/src:/opt/app/src/
 
   backend-db:
     build:

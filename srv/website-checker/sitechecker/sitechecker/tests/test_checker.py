@@ -1,6 +1,6 @@
 import datetime
 
-from src.sitechecker.checker import Checker
+from sitechecker.checker import Checker
 
 
 def test_checker():

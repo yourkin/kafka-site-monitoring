@@ -18,19 +18,23 @@ RUN apt-get update && apt-get -y install --no-install-recommends curl netcat bui
 RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python -
 RUN poetry config virtualenvs.create false
 
-# copy project requirement files here to ensure they will be cached.
+# Copy project requirement files here to ensure they will be cached.
 WORKDIR $PYSETUP_PATH
 COPY poetry.lock pyproject.toml ./
 RUN bash -c "poetry install --no-root"
 
-# Add App
-RUN mkdir -p /opt/app/src
-COPY src/ /opt/app/src
+# Install packages
+RUN mkdir -p /opt/app/src/sitechecker /opt/app/src/checkerapi
+COPY sitechecker /opt/app/src/sitechecker
+WORKDIR /opt/app/src/sitechecker
+RUN bash -c "pip install -e ."
+
+COPY checkerapi/src/checkerapi /opt/app/src/checkerapi
 WORKDIR /opt/app/src
 
-# Make entrypoint.sh runnable
 COPY entrypoint.sh /opt/app/
-RUN chmod +x /opt/app/entrypoint.sh
+COPY install_packages.sh /opt/app/
+RUN chmod +x /opt/app/entrypoint.sh /opt/app/install_packages.sh
 
 # Run entrypoint.sh to wait on the database to be available
 ENTRYPOINT ["/opt/app/entrypoint.sh"]

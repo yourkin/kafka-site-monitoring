@@ -36,3 +36,7 @@ class Checker:
     def _check_pattern(self, pattern, content) -> None:
         if pattern:
             self.is_pattern_found = bool(re.search(pattern, content))
+
+
+def main():
+    pass

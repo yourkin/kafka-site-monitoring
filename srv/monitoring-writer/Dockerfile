@@ -21,7 +21,7 @@ RUN poetry config virtualenvs.create false
 # copy project requirement files here to ensure they will be cached.
 WORKDIR $PYSETUP_PATH
 COPY poetry.lock pyproject.toml ./
-RUN bash -c "poetry install "
+RUN bash -c "poetry install"
 
 # Add App
 RUN mkdir -p /opt/app/src

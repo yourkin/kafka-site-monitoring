@@ -8,8 +8,7 @@ done
 
 echo "PostgreSQL started"
 
-
-# You can put other setup logic here
+#/opt/app/install_packages.sh
 
 # Evaluating passed command:
 exec "$@"
