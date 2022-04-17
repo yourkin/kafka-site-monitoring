@@ -1,6 +1,7 @@
 from datetime import datetime
 
 from sitemonitor.db import Writer
+from sitemonitor.settings import TEST_DB_URL
 
 
 def test_db_writer():
@@ -12,7 +13,7 @@ def test_db_writer():
         "is_pattern_found": True,
         "datetime_checked": datetime.now(),
     }
-    with Writer(database_url=) as writer:
+    with Writer(database_url=TEST_DB_URL) as writer:
         writer.save_entry(data_in)
         data_out = writer.get_last_entry()
     del data_out["row_id"]
