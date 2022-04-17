@@ -3,7 +3,9 @@ def test_checker_api(test_app):
     # test_app
 
     # When
-    response = test_app.get("/website-checker", json={"url": "https://google.com", "pattern": "sometext"})
+    response = test_app.get(
+        "/website-checker", json={"url": "https://google.com", "pattern": "sometext"}
+    )
 
     # Then
     assert response.status_code == 200

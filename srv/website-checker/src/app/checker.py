@@ -13,7 +13,9 @@ class Checker:
     pattern: str
     datetime_checked: datetime.datetime
 
-    def __init__(self, url: str, pattern: str | None, follow_redirects: bool = True) -> None:
+    def __init__(
+        self, url: str, pattern: str | None, follow_redirects: bool = True
+    ) -> None:
         self.url = url
         self.pattern = pattern
         self._check_url(url, follow_redirects)
@@ -22,7 +24,7 @@ class Checker:
     def _check_url(self, url, follow_redirects) -> None:
         try:
             response = httpx.get(url, follow_redirects=follow_redirects)
-        except Exception: # broad exception to catch all network errors, not important which ones exactly
+        except Exception:  # broad exception to catch all network errors, not important which ones exactly
             pass
         else:
             self.status_code = response.status_code
@@ -34,4 +36,3 @@ class Checker:
     def _check_pattern(self, pattern, content) -> None:
         if pattern:
             self.is_pattern_found = bool(re.search(pattern, content))
-

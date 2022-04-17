@@ -11,7 +11,7 @@ def create_application() -> FastAPI:
     fastapi_app = FastAPI(
         title="Website Checker API",
         description="API for monitoring websites",
-        version="0.1.0"
+        version="0.1.0",
     )
     fastapi_app.include_router(heartbeat.router)
     fastapi_app.include_router(checker.router)

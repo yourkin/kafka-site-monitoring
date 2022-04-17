@@ -4,7 +4,6 @@ from sitemonitor.settings import DATABASE_URL, MONITORING_TABLE
 
 
 class Writer:
-
     def create_table(self, table=MONITORING_TABLE) -> None:
         query = f"""
         CREATE TABLE IF NOT EXISTS {table} (
@@ -14,16 +13,15 @@ class Writer:
             response_time float,
             pattern varchar,
             is_pattern_found boolean,
-            datetime_checked varchar(32)
-        )
+            datetime_checked TIMESTAMP
+        );
         """
         try:
             with self.conn.cursor() as cur:
                 cur.execute(query)
                 self.conn.commit()
-        except Exception as e: # broad exception because we need to catch all errors, except keyboard interrupt.
+        except Exception as e:  # broad exception because we need to catch all errors, except keyboard interrupt.
             print(f'Table creation for "{table}" failed with error: {e}.')
-
 
     def __init__(self, database_url=DATABASE_URL):
         self.conn = psycopg.connect(database_url)
@@ -34,9 +32,21 @@ class Writer:
         with self.conn.cursor() as cur:
             cur.execute(query, list(data.values()))
 
-    def get_last_entry(self):
-        query = f"""
-        """
+    def get_last_entry(self, table=MONITORING_TABLE):
+        query = f"SELECT * FROM {table} ORDER BY id DESC LIMIT 1;" ""
+        with self.conn.cursor() as cur:
+            cur.execute(query)
+            d = {}
+            (
+                d["row_id"],
+                d["url"],
+                d["status_code"],
+                d["response_time"],
+                d["pattern"],
+                d["is_pattern_found"],
+                d["datetime_checked"],
+            ) = cur.fetchone()
+        return d
 
     def __enter__(self):
         return self
@@ -47,4 +57,3 @@ class Writer:
 
 with Writer() as writer:
     writer.create_table()
-

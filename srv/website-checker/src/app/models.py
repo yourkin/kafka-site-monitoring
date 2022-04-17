@@ -15,4 +15,4 @@ class WebsiteStatus(WebsiteParams):
     datetime_checked: datetime.datetime
 
     class Config:
-        orm_mode = True # this allows to load data from a class, unrelated to database operations
+        orm_mode = True  # this allows to load data from a class, unrelated to database operations
