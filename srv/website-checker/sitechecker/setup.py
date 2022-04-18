@@ -44,7 +44,7 @@ setup(
     #
     # For an analysis of "install_requires" vs pip's requirements files see:
     # https://packaging.python.org/discussions/install-requires-vs-requirements/
-    install_requires=["httpx"],  # Optional
+    install_requires=["httpx", "typer"],  # Optional
     # List additional groups of dependencies here (e.g. development
     # dependencies). Users will be able to install these using the "extras"
     # syntax, for example:
@@ -77,7 +77,7 @@ setup(
     # executes the function `main` from this package when invoked:
     entry_points={  # Optional
         "console_scripts": [
-            "sitechecker=checker:main",
+            "sitechecker=sitechecker:run",
         ],
     },
     # List additional URLs that are relevant to your project as a dict.
