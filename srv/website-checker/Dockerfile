@@ -31,10 +31,3 @@ RUN bash -c "pip install -e ."
 
 COPY checkerapi/src/checkerapi /opt/app/src/checkerapi
 WORKDIR /opt/app/src
-
-COPY entrypoint.sh /opt/app/
-COPY install_packages.sh /opt/app/
-RUN chmod +x /opt/app/entrypoint.sh /opt/app/install_packages.sh
-
-# Run entrypoint.sh to wait on the database to be available
-ENTRYPOINT ["/opt/app/entrypoint.sh"]
