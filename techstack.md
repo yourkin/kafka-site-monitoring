@@ -1,7 +1,8 @@
 <!--
---- Readme.md Snippet without images Start ---
+&lt;--- Readme.md Snippet without images Start ---&gt;
 ## Tech Stack
 yourkin/kafka-site-monitoring is built on the following main stack:
+
 - [Python](https://www.python.org) – Languages
 - [SQL](https://en.wikipedia.org/wiki/SQL) – Languages
 - [Heroku Postgres](https://www.heroku.com/postgres) – PostgreSQL as a Service
@@ -9,11 +10,13 @@ yourkin/kafka-site-monitoring is built on the following main stack:
 - [Docker](https://www.docker.com/) – Virtual Machine Platforms & Containers
 
 Full tech stack [here](/techstack.md)
---- Readme.md Snippet without images End ---
 
---- Readme.md Snippet with images Start ---
+&lt;--- Readme.md Snippet without images End ---&gt;
+
+&lt;--- Readme.md Snippet with images Start ---&gt;
 ## Tech Stack
 yourkin/kafka-site-monitoring is built on the following main stack:
+
 - <img width='25' height='25' src='https://img.stackshare.io/service/993/pUBY5pVj.png' alt='Python'/> [Python](https://www.python.org) – Languages
 - <img width='25' height='25' src='https://img.stackshare.io/service/2271/default_068d33483bba6b81ee13fbd4dc7aab9780896a54.png' alt='SQL'/> [SQL](https://en.wikipedia.org/wiki/SQL) – Languages
 - <img width='25' height='25' src='https://img.stackshare.io/service/2516/original.png' alt='Heroku Postgres'/> [Heroku Postgres](https://www.heroku.com/postgres) – PostgreSQL as a Service
@@ -21,14 +24,15 @@ yourkin/kafka-site-monitoring is built on the following main stack:
 - <img width='25' height='25' src='https://img.stackshare.io/service/586/n4u37v9t_400x400.png' alt='Docker'/> [Docker](https://www.docker.com/) – Virtual Machine Platforms & Containers
 
 Full tech stack [here](/techstack.md)
---- Readme.md Snippet with images End ---
+
+&lt;--- Readme.md Snippet with images End ---&gt;
 -->
 <div align="center">
 
 # Tech Stack File
 ![](https://img.stackshare.io/repo.svg "repo") [yourkin/kafka-site-monitoring](https://github.com/yourkin/kafka-site-monitoring)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
-|14<br/>Tools used|11/09/23 <br/>Report generated|
+|14<br/>Tools used|01/04/24 <br/>Report generated|
 |------|------|
 </div>
 
@@ -115,15 +119,15 @@ Full tech stack [here](/techstack.md)
 
 |NAME|VERSION|LAST UPDATED|LAST UPDATED BY|LICENSE|VULNERABILITIES|
 |:------|:------|:------|:------|:------|:------|
-|[black](https://pypi.org/black)|v22.3.0|04/14/22|Andrew Yourkin |MIT|N/A|
-|[fastapi](https://pypi.org/fastapi)|v0.75.1|04/08/22|Andrew Yourkin |MIT|N/A|
-|[httpx](https://pypi.org/httpx)|v0.22.0|04/12/22|Andrew Yourkin |BSD-3-Clause|[CVE-2021-41945](https://github.com/advisories/GHSA-h8pj-cxx2-jfg2) (Critical)|
-|[ipython](https://pypi.org/ipython)|v8.2.0|04/13/22|Andrew Yourkin |BSD-3-Clause|N/A|
-|[kafka-python](https://pypi.org/kafka-python)|v2.0.2|04/13/22|Andrew Yourkin |Apache-2.0|N/A|
-|[pytest](https://pypi.org/pytest)|v7.1.1|04/13/22|Andrew Yourkin |MIT|N/A|
-|[requests](https://pypi.org/requests)|v2.27.1|04/13/22|Andrew Yourkin |Apache-2.0|[CVE-2023-32681](https://github.com/advisories/GHSA-j8r2-6x86-q33q) (Moderate)|
+|[black](https://pypi.org/project/black)|v22.3.0|04/14/22|Andrew Yourkin |MIT|N/A|
+|[fastapi](https://pypi.org/project/fastapi)|v0.75.1|04/08/22|Andrew Yourkin |MIT|N/A|
+|[httpx](https://pypi.org/project/httpx)|v0.22.0|04/12/22|Andrew Yourkin |BSD-3-Clause|[CVE-2021-41945](https://github.com/advisories/GHSA-h8pj-cxx2-jfg2) (Critical)|
+|[ipython](https://pypi.org/project/ipython)|v8.2.0|04/13/22|Andrew Yourkin |BSD-3-Clause|N/A|
+|[kafka-python](https://pypi.org/project/kafka-python)|v2.0.2|04/13/22|Andrew Yourkin |Apache-2.0|N/A|
+|[pytest](https://pypi.org/project/pytest)|v7.1.1|04/13/22|Andrew Yourkin |MIT|N/A|
+|[requests](https://pypi.org/project/requests)|v2.27.1|04/13/22|Andrew Yourkin |Apache-2.0|[CVE-2023-32681](https://github.com/advisories/GHSA-j8r2-6x86-q33q) (Moderate)|
 
 <br/>
 <div align='center'>
 
-Generated via [Stack File](https://github.com/apps/stack-file)
+Generated via [Stack File](https://github.com/marketplace/stack-file)
