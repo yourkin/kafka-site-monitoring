@@ -1,7 +1,8 @@
 repo_name: yourkin/kafka-site-monitoring
 report_id: 45fa8bf666c0d943e66329c69b0c76cb
+version: 0.1
 repo_type: Public
-timestamp: '2023-11-09T17:07:30+00:00'
+timestamp: '2024-01-04T15:08:41+00:00'
 requested_by: yourkin
 provider: github
 branch: main
@@ -16,6 +17,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/993/pUBY5pVj.png
+  detection_source_url: https://github.com/yourkin/kafka-site-monitoring
   detection_source: Repo Metadata
 - name: SQL
   description: It is a domain-specific language used in programming
@@ -25,6 +27,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/2271/default_068d33483bba6b81ee13fbd4dc7aab9780896a54.png
+  detection_source_url: https://github.com/yourkin/kafka-site-monitoring/blob/main/srv/db/create.sql
   detection_source: srv/db/create.sql
   last_updated_by: Andrew Yourkin
   last_updated_on: 2022-04-08 23:57:45.000000000 Z
@@ -37,6 +40,7 @@ tools:
   category: Data Stores
   sub_category: PostgreSQL as a Service
   image_url: https://img.stackshare.io/service/2516/original.png
+  detection_source_url: https://github.com/yourkin/kafka-site-monitoring/blob/main/srv/db/Dockerfile
   detection_source: srv/db/Dockerfile
   last_updated_by: Andrew Yourkin
   last_updated_on: 2022-04-08 23:57:45.000000000 Z
@@ -49,6 +53,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Virtual Machine Platforms & Containers
   image_url: https://img.stackshare.io/service/586/n4u37v9t_400x400.png
+  detection_source_url: https://github.com/yourkin/kafka-site-monitoring
   detection_source: Repo Metadata
 - name: Git
   description: Fast, scalable, distributed revision control system
@@ -58,6 +63,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Version Control System
   image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/yourkin/kafka-site-monitoring
   detection_source: Repo Metadata
 - name: PyPI
   description: A repository of software for the Python programming language
@@ -67,6 +73,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Hosted Package Repository
   image_url: https://img.stackshare.io/service/12572/-RIWgodF_400x400.jpg
+  detection_source_url: https://github.com/yourkin/kafka-site-monitoring/blob/main/srv/website-checker/pyproject.toml
   detection_source: srv/website-checker/pyproject.toml
   last_updated_by: Andrew Yourkin
   last_updated_on: 2022-04-08 23:57:45.000000000 Z
@@ -79,10 +86,11 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/4631/default_c2062d40130562bdc836c13dbca02d318205a962.png
+  detection_source_url: https://github.com/yourkin/kafka-site-monitoring
   detection_source: Repo Metadata
 - name: black
   description: The uncompromising code formatter
-  package_url: https://pypi.org/black
+  package_url: https://pypi.org/project/black
   version: 22.3.0
   license: MIT
   open_source: true
@@ -90,13 +98,13 @@ tools:
   category: Libraries
   sub_category: PyPI Packages
   image_url: https://img.stackshare.io/package/20099/default_029b9bbfb6be2cd34bebeda5b8e1e80a1d22441c.png
-  detection_source_url: srv/monitoring-writer/poetry.lock
+  detection_source_url: https://github.com/yourkin/kafka-site-monitoring/blob/main/srv/monitoring-writer/poetry.lock
   detection_source: srv/monitoring-writer/pyproject.toml
   last_updated_by: Andrew Yourkin
   last_updated_on: 2022-04-14 02:59:30.000000000 Z
 - name: fastapi
   description: FastAPI framework
-  package_url: https://pypi.org/fastapi
+  package_url: https://pypi.org/project/fastapi
   version: 0.75.1
   license: MIT
   open_source: true
@@ -104,13 +112,13 @@ tools:
   category: Libraries
   sub_category: PyPI Packages
   image_url: https://img.stackshare.io/package/20520/default_ded6d17aa418fbd05ff28b85345c77ab878c6b37.png
-  detection_source_url: srv/website-checker/poetry.lock
+  detection_source_url: https://github.com/yourkin/kafka-site-monitoring/blob/main/srv/website-checker/poetry.lock
   detection_source: srv/website-checker/pyproject.toml
   last_updated_by: Andrew Yourkin
   last_updated_on: 2022-04-08 23:57:45.000000000 Z
 - name: httpx
   description: The next generation HTTP client
-  package_url: https://pypi.org/httpx
+  package_url: https://pypi.org/project/httpx
   version: 0.22.0
   license: BSD-3-Clause
   open_source: true
@@ -118,8 +126,8 @@ tools:
   category: Libraries
   sub_category: PyPI Packages
   image_url: https://img.stackshare.io/package/20315/default_5f4e928dbcb1c4db4050881fc2e0229785fc931c.png
-  detection_source_url: srv/website-checker/poetry.lock
-  detection_source: srv/website-checker/sitechecker/setup.py
+  detection_source_url: https://github.com/yourkin/kafka-site-monitoring/blob/main/srv/website-checker/poetry.lock
+  detection_source: srv/website-checker/pyproject.toml
   last_updated_by: Andrew Yourkin
   last_updated_on: 2022-04-12 03:02:37.000000000 Z
   vulnerabilities:
@@ -131,7 +139,7 @@ tools:
     first_patched: 0.23.0
 - name: ipython
   description: 'IPython: Productive Interactive Computing'
-  package_url: https://pypi.org/ipython
+  package_url: https://pypi.org/project/ipython
   version: 8.2.0
   license: BSD-3-Clause
   open_source: true
@@ -139,13 +147,13 @@ tools:
   category: Libraries
   sub_category: PyPI Packages
   image_url: https://img.stackshare.io/package/19892/default_f716e4bc541a9eb6e3f5b7a20d7c35355075b0b4.png
-  detection_source_url: srv/monitoring-writer/poetry.lock
+  detection_source_url: https://github.com/yourkin/kafka-site-monitoring/blob/main/srv/monitoring-writer/poetry.lock
   detection_source: srv/monitoring-writer/pyproject.toml
   last_updated_by: Andrew Yourkin
   last_updated_on: 2022-04-13 21:24:26.000000000 Z
 - name: kafka-python
   description: Pure Python client for Apache Kafka
-  package_url: https://pypi.org/kafka-python
+  package_url: https://pypi.org/project/kafka-python
   version: 2.0.2
   license: Apache-2.0
   open_source: true
@@ -153,13 +161,13 @@ tools:
   category: Libraries
   sub_category: PyPI Packages
   image_url: https://img.stackshare.io/package/20047/default_b0b684477aefb2da4c92a4bafd91d26e16511cd1.png
-  detection_source_url: srv/monitoring-writer/poetry.lock
-  detection_source: srv/website-checker/pyproject.toml
+  detection_source_url: https://github.com/yourkin/kafka-site-monitoring/blob/main/srv/monitoring-writer/poetry.lock
+  detection_source: srv/monitoring-writer/pyproject.toml
   last_updated_by: Andrew Yourkin
   last_updated_on: 2022-04-13 21:24:26.000000000 Z
 - name: pytest
   description: 'Pytest: simple powerful testing with Python'
-  package_url: https://pypi.org/pytest
+  package_url: https://pypi.org/project/pytest
   version: 7.1.1
   license: MIT
   open_source: true
@@ -167,13 +175,13 @@ tools:
   category: Libraries
   sub_category: PyPI Packages
   image_url: https://img.stackshare.io/package/19843/default_4604ff5dcb7f4d9c7b3833591c2142493951b19c.png
-  detection_source_url: srv/monitoring-writer/poetry.lock
-  detection_source: srv/website-checker/pyproject.toml
+  detection_source_url: https://github.com/yourkin/kafka-site-monitoring/blob/main/srv/monitoring-writer/poetry.lock
+  detection_source: srv/monitoring-writer/pyproject.toml
   last_updated_by: Andrew Yourkin
   last_updated_on: 2022-04-13 21:24:26.000000000 Z
 - name: requests
   description: Python HTTP for Humans
-  package_url: https://pypi.org/requests
+  package_url: https://pypi.org/project/requests
   version: 2.27.1
   license: Apache-2.0
   open_source: true
@@ -181,8 +189,8 @@ tools:
   category: Libraries
   sub_category: PyPI Packages
   image_url: https://img.stackshare.io/package/19826/default_d7c684bf2673f008a9f02ac93901229297a22d7e.png
-  detection_source_url: srv/monitoring-writer/poetry.lock
-  detection_source: srv/website-checker/pyproject.toml
+  detection_source_url: https://github.com/yourkin/kafka-site-monitoring/blob/main/srv/monitoring-writer/poetry.lock
+  detection_source: srv/monitoring-writer/pyproject.toml
   last_updated_by: Andrew Yourkin
   last_updated_on: 2022-04-13 21:24:26.000000000 Z
   vulnerabilities:
