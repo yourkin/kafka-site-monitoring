@@ -2,11 +2,11 @@ repo_name: yourkin/kafka-site-monitoring
 report_id: 45fa8bf666c0d943e66329c69b0c76cb
 version: 0.1
 repo_type: Public
-timestamp: '2024-01-05T09:12:25+00:00'
+timestamp: '2024-01-11T12:34:35+00:00'
 requested_by: yourkin
 provider: github
 branch: main
-detected_tools_count: 14
+detected_tools_count: 17
 tools:
 - name: Python
   description: A clear and powerful object-oriented programming language, comparable
@@ -31,6 +31,21 @@ tools:
   detection_source: srv/db/create.sql
   last_updated_by: Andrew Yourkin
   last_updated_on: 2022-04-08 23:57:45.000000000 Z
+- name: FastAPI
+  description: A high performance, easy to learn, fast to code, ready for production
+    web framework
+  website_url: https://fastapi.tiangolo.com/
+  version: 0.75.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Microframeworks (Backend)
+  image_url: https://img.stackshare.io/service/25014/default_f6ff39141b468e832d1bc59fc98a060df604d44d.png
+  detection_source_url: https://github.com/yourkin/kafka-site-monitoring/blob/main/srv/website-checker/poetry.lock
+  detection_source: srv/website-checker/pyproject.toml
+  last_updated_by: Andrew Yourkin
+  last_updated_on: 2022-04-08 23:57:45.000000000 Z
 - name: Heroku Postgres
   description: Heroku's Database-as-a-Service. Based on the most powerful open-source
     database, PostgreSQL
@@ -44,6 +59,31 @@ tools:
   detection_source: srv/db/Dockerfile
   last_updated_by: Andrew Yourkin
   last_updated_on: 2022-04-08 23:57:45.000000000 Z
+- name: Kafka
+  description: Distributed, fault tolerant, high throughput pub-sub messaging system
+  website_url: http://kafka.apache.org/
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Data Stores
+  sub_category: Message Queue
+  image_url: https://img.stackshare.io/service/1063/kazUJooF_400x400.jpg
+  detection_source_url: https://github.com/yourkin/kafka-site-monitoring/blob/main/srv/kafka/docker-compose.yml
+  detection_source: srv/kafka/docker-compose.yml
+  last_updated_by: Andrew Yourkin
+  last_updated_on: 2022-04-08 23:57:45.000000000 Z
+- name: PostgreSQL
+  description: A powerful, open source object-relational database system
+  website_url: http://www.postgresql.org/
+  open_source: true
+  hosted_saas: false
+  category: Data Stores
+  sub_category: Databases
+  image_url: https://img.stackshare.io/service/1028/ASOhU5xJ.png
+  detection_source_url: https://github.com/yourkin/kafka-site-monitoring/blob/main/docker-compose.yml
+  detection_source: docker-compose.yml
+  last_updated_by: Andrew Yourkin
+  last_updated_on: 2022-04-17 01:14:34.000000000 Z
 - name: Docker
   description: Enterprise Container Platform for High-Velocity Innovation.
   website_url: https://www.docker.com/
@@ -102,20 +142,6 @@ tools:
   detection_source: srv/monitoring-writer/pyproject.toml
   last_updated_by: Andrew Yourkin
   last_updated_on: 2022-04-14 02:59:30.000000000 Z
-- name: fastapi
-  description: FastAPI framework
-  package_url: https://pypi.org/project/fastapi
-  version: 0.75.1
-  license: MIT
-  open_source: true
-  hosted_saas: false
-  category: Libraries
-  sub_category: PyPI Packages
-  image_url: https://img.stackshare.io/package/20520/default_ded6d17aa418fbd05ff28b85345c77ab878c6b37.png
-  detection_source_url: https://github.com/yourkin/kafka-site-monitoring/blob/main/srv/website-checker/poetry.lock
-  detection_source: srv/website-checker/pyproject.toml
-  last_updated_by: Andrew Yourkin
-  last_updated_on: 2022-04-08 23:57:45.000000000 Z
 - name: httpx
   description: The next generation HTTP client
   package_url: https://pypi.org/project/httpx
@@ -200,3 +226,17 @@ tools:
     detected_date: May 23
     severity: moderate
     first_patched: 2.31.0
+- name: uvicorn
+  description: The lightning-fast ASGI server
+  package_url: https://pypi.org/project/uvicorn
+  version: 0.17.6
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20431/default_f824837db22536768ec317b67275fa384fad7d47.png
+  detection_source_url: https://github.com/yourkin/kafka-site-monitoring/blob/main/srv/website-checker/poetry.lock
+  detection_source: srv/website-checker/pyproject.toml
+  last_updated_by: Andrew Yourkin
+  last_updated_on: 2022-04-08 23:57:45.000000000 Z
